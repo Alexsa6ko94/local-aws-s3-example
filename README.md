@@ -26,7 +26,7 @@ sudo pip install docker-compose
 ```
 Clone this repo
 ```bash
-git clone 
+git clone https://github.com/Alexsa6ko94/local-aws-s3-example.git
 ```
 Make a folder where the localstack data will be stored on the host
 ```bash
@@ -117,5 +117,5 @@ We will use the ```test-upload.jpg``` image for our demo
 Execute the python script that will upload our test image:
 ```python s3_upload.py```
 
-It will output tge URL of the uploaded image.
+It will output the URL of the uploaded image.
 Copy the URL and paste it into your browser. The browser will immediately download the image.
