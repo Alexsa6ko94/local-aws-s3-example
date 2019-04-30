@@ -1,12 +1,12 @@
 # How to fake AWS S3 locally with LocalStack
 
-# Motivation:
+## Motivation:
 I prefer to keep my local development environment as close as possible to how it's going to work in production. I can't think of a better away to achieve that than putting a bunch of S3 servers inside my computer.
 
-# What will be covered:
+## What will be covered:
 This tutorial will cover setting up Localstack S3 and a simple python script to upload file to it. Localstack allows you to emulate a number of AWS services on your computer, but we're just going to use S3 in this example. Also, Localstack isn't specific to Python - so even if you aren't working in Python, a good portion of this tutorial will still be relevant. This also covers a little bit about Docker.
 
-# A few benefits of this approach are:
+## A few benefits of this approach are:
 
 	- You can work offline
 	- You don't need a shared 'dev' bucket that everyone on your team uses
@@ -14,7 +14,7 @@ This tutorial will cover setting up Localstack S3 and a simple python script to 
 	- You don't need to worry about paying for AWS usage
 	- You don't need to log into AWS 😛
 
-# Initial Setup:
+## Initial Setup:
 First, we'll need to install a few things.
 
 Install Docker if you haven't already.
@@ -37,7 +37,7 @@ Install boto3 lib:
 sudo pip install boto3
 ```
 
-# Docker Config:
+## Docker Config:
 You can run Localstack directly from the command line, but I like using Docker to keep it easy and clean. It's also nice because you don't need to worry about installing Localstack on your system. I prefer to use docker-compose to set this up. Here's the config:
 
 ```docker-compose.yml```
@@ -60,7 +60,7 @@ services:
       - '/var/run/docker.sock:/var/run/docker.sock'
 ```
 
-# Breaking some of these lines down:
+## Breaking some of these lines down:
 
 ### image: localstack/localstack:latest
 Use the latest Localstack image from Dockerhub
@@ -100,7 +100,7 @@ To make sure it's working, we can visit http://localhost:8055 to see Localstack'
 
 Similarly, our S3 endpoint http://localhost:4572 will show some basic AWS info
 
-# Working with Localstack
+## Working with Localstack
 AWS is now inside our computer and we have a local implementation of the S3 service.
 
 Before we start uploading files, we need to create and configure a bucket. We'll do this using the AWS CLI that we installed earlier, using the ```--endpoint-url``` flag to talk to Localstack instead.
@@ -111,7 +111,7 @@ Before we start uploading files, we need to create and configure a bucket. We'll
 Now, when we visit the web UI(http://localhost:8055), we should see our bucket.
 
 
-# Upload file to our bucket:
+## Upload file to our bucket:
 We will use the ```test-upload.jpg``` image for our demo
 
 Execute the python script that will upload our test image:
