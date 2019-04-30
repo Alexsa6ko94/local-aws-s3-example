@@ -86,15 +86,15 @@ This is the directory where Localstack will save its data internally. More in th
 ### volumes
 './.localstack:/tmp/localstack'
 
-Remember when set up the DATA_DIR to be /tmp/localstack/data about 2 seconds ago? Just like the localhost:container syntax we used on the ports, this allows your containers to access a portion of your hard drive. Your computer's directory on the left, the container's on the right.
+Remember when set up the ```DATA_DIR``` to be ```/tmp/localstack/data``` in the compose? Just like the ```localhost:container``` syntax we used on the ports, this allows your containers to access a portion of your hard drive. Your computer's directory on the left, the container's on the right.
 
-Here, we're telling the container to use our .localstack directory for its /tmp/localstack. It's like a symlink, or a magical portal, or something.
+Here, we're telling the container to use our ```.localstack``` directory for its ```/tmp/localstack```. It's like a symlink, or a magical portal, or something.
 
-In our case, this makes sure that any data created by the container will still be present once the container restarts. Note that /tmp is cleared frequently and isn't a good place to store. If you want to put it in a more secure place
+In our case, this makes sure that any data created by the container will still be present once the container restarts. Note that ```/tmp``` is cleared frequently and isn't a good place to store. If you want to put it in a more secure place
 
-'/var/run/docker.sock:/var/run/docker.sock'
+```'/var/run/docker.sock:/var/run/docker.sock'```
 Starting our Container
-Now that we have our docker-compose.yml in good shape, we can spin up the container: docker-compose up -d.
+Now that we have our docker-compose.yml in good shape, we can spin up the container: ```docker-compose up -d```.
 
 To make sure it's working, we can visit http://localhost:8055 to see Localstack's web UI. Right now it will look pretty empty
 
