@@ -19,11 +19,7 @@ First, we'll need to install a few things.
 
 Install Docker if you haven't already.
 Install the AWS CLI. Even though we aren't going to be working with "real" AWS, we'll use this to talk to our local docker containers.
-Install docker-compose
 
-```bash
-sudo pip install docker-compose
-```
 Clone this repo
 ```bash
 git clone https://github.com/Alexsa6ko94/local-aws-s3-example.git
@@ -31,6 +27,10 @@ git clone https://github.com/Alexsa6ko94/local-aws-s3-example.git
 Make a folder where the localstack data will be stored on the host
 ```bash
 cd local-aws-s3-example && mkdir .localstack
+```
+Install docker-compose
+```bash
+sudo pip install docker-compose
 ```
 Install boto3 lib:
 ```bash
