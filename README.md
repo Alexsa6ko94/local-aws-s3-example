@@ -20,15 +20,16 @@ First, we'll need to install a few things.
 Install Docker if you haven't already.
 Install the AWS CLI. Even though we aren't going to be working with "real" AWS, we'll use this to talk to our local docker containers.
 Install docker-compose
-bash```
+
+```bash
 sudo pip install docker-compose
 ```
 Make a few files. Create a new directory for your project, and within it:
-bash```
+```bash
 touch docker-compose.yml && mkdir .localstack
 ```
 Install boto3 lib:
-bash```
+```bash
 sudo pip install boto3
 ```
 
@@ -37,7 +38,7 @@ You can run Localstack directly from the command line, but I like using Docker t
 
 ```docker-compose.yml```
 
-bash```
+```bash
 version: '3.2'
 services:
   localstack:
