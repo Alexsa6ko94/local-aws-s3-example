@@ -72,7 +72,7 @@ This gives our container a specific name that we can refer to later in the CLI.
 ```'4563-4584:4563-4584' and '8055:8080'```:
 When your docker container starts, it will open up a few ports. The number on the left binds the port on your localhost to the port within the container, which is the number on the right. In most cases, these two numbers can be the same, i.e. ```8080:8080```. I often have some other things running on ```localhost:8080```, so here, I've changed the default to ```8055:8080```. This means that when I connect to http://localhost:8055 within my app, it's going to talk to port 8080 on the container.
 
-The line '4563-4584:4563-4584' does the same thing, but binds a whole range of ports. These particular port numbers are what Localstack uses as endpoints for the various APIs. We'll see more about this in a little bit.
+The line ```'4563-4584:4563-4584'``` does the same thing, but binds a whole range of ports. These particular port numbers are what Localstack uses as endpoints for the various APIs. We'll see more about this in a little bit.
 
 ### environment
 These are environment variables that are supplied to the container. Localstack will use these to set some things up internally:
