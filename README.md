@@ -24,7 +24,7 @@ Install docker-compose
 ```bash
 sudo pip install docker-compose
 ```
-Make a few files. Create a new directory for your project, and within it:
+Clone this repo
 ```bash
 touch docker-compose.yml && mkdir .localstack
 ```
