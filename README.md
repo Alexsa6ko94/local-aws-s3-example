@@ -26,7 +26,11 @@ sudo pip install docker-compose
 ```
 Clone this repo
 ```bash
-touch docker-compose.yml && mkdir .localstack
+git clone 
+```
+Make a folder where the localstack data will be stored on the host
+```bash
+mkdir .localstack
 ```
 Install boto3 lib:
 ```bash
@@ -58,24 +62,28 @@ services:
 
 # Breaking some of these lines down:
 
-image: localstack/localstack:latest
+### image: localstack/localstack:latest
 Use the latest Localstack image from Dockerhub
 
-container_name: localstack_demo:
+### container_name: localstack_demo:
 This gives our container a specific name that we can refer to later in the CLI.
 
-ports: '4563-4584:4563-4584' and '8055:8080':
+### ports: 
+'4563-4584:4563-4584' and '8055:8080':
 When your docker container starts, it will open up a few ports. The number on the left binds the port on your localhost to the port within the container, which is the number on the right. In most cases, these two numbers can be the same, i.e. 8080:8080. I often have some other things running on localhost:8080, so here, I've changed the default to 8055:8080. This means that when I connect to http://localhost:8055 within my app, it's going to talk to port 8080 on the container.
 
 The line '4563-4584:4563-4584' does the same thing, but binds a whole range of ports. These particular port numbers are what Localstack uses as endpoints for the various APIs. We'll see more about this in a little bit.
 
-```environment```
+### environment
 These are environment variables that are supplied to the container. Localstack will use these to set some things up internally:
 
-SERVICES=s3: You can define a list of AWS services to emulate. In our case, we're just using S3, but you can include additional APIs, i.e. SERVICES=s3,lambda. There's more on this in the Localstack docs.
-DEBUG=1: 🧻 Show me all of the logs!
-DATA_DIR=/tmp/localstack/data: This is the directory where Localstack will save its data internally. More in this next:
-volumes
+### SERVICES=s3: 
+You can define a list of AWS services to emulate. In our case, we're just using S3, but you can include additional APIs, i.e. SERVICES=s3,lambda. There's more on this in the Localstack docs.
+### DEBUG=1:
+Show me all of the logs!
+### DATA_DIR=/tmp/localstack/data:
+This is the directory where Localstack will save its data internally. More in this next:
+### volumes
 './.localstack:/tmp/localstack'
 
 Remember when set up the DATA_DIR to be /tmp/localstack/data about 2 seconds ago? Just like the localhost:container syntax we used on the ports, this allows your containers to access a portion of your hard drive. Your computer's directory on the left, the container's on the right.
