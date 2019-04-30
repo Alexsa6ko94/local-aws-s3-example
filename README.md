@@ -4,7 +4,7 @@
 I prefer to keep my local development environment as close as possible to how it's going to work in production. I can't think of a better away to achieve that than putting a bunch of S3 servers inside my computer.
 
 ## What will be covered:
-This tutorial will cover setting up Localstack S3 and a simple python script to upload file to it. Localstack allows you to emulate a number of AWS services on your computer, but we're just going to use S3 in this example. Also, Localstack isn't specific to Python - so even if you aren't working in Python, a good portion of this tutorial will still be relevant. This also covers a little bit about Docker.
+This tutorial will cover setting up Localstack["https://github.com/localstack/localstack"] S3 and a simple python script to upload file to it. Localstack allows you to emulate a number of AWS services on your computer, but we're just going to use S3 in this example. Also, Localstack isn't specific to Python - so even if you aren't working in Python, a good portion of this tutorial will still be relevant. This also covers a little bit about Docker.
 
 ## A few benefits of this approach are:
 
