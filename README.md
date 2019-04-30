@@ -1,4 +1,4 @@
-# How to fake AWS locally with LocalStack
+# How to fake AWS S3 locally with LocalStack
 
 # Motivation:
 I prefer to keep my local development environment as close as possible to how it's going to work in production. I can't think of a better away to achieve that than putting a bunch of S3 servers inside my computer.
