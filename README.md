@@ -30,7 +30,7 @@ git clone https://github.com/Alexsa6ko94/local-aws-s3-example.git
 ```
 Make a folder where the localstack data will be stored on the host
 ```bash
-mkdir .localstack
+cd local-aws-s3-example && mkdir .localstack
 ```
 Install boto3 lib:
 ```bash
